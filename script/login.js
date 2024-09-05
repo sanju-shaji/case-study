@@ -1,20 +1,13 @@
-function sub() {
-    // Get user input
-    const username = document.getElementById('name').value;
-    const password = document.getElementById('pass').value;
-
-    // Valid credentials
-    const validUsername = 'admin';
-    const validPassword = '12345';
-
-    // Check credentials
-    if (username == validUsername && password == validPassword) {
-        // Redirect to another page on successful logiton
-        window.location.href = 'todo.html'; // Change 'success.html' to your target page
-        return true; // Prevent form submission
+document.getElementById('log').addEventListener('click', function() {
+    // Get user input values
+    var username = document.getElementById('name').value;
+    var password = document.getElementById('pass').value;
+    
+    // Validate the credentials
+    if (username === 'admin' && password === '12345') {
+        // Redirect to another page (e.g., dashboard.html)
+        window.location.href = 'todo.html'; // Change 'dashboard.html' to the desired URL
     } else {
-        // Show error message
-        document.getElementById('message').textContent = 'Invalid username or password.';
-        return false; // Prevent form submission
+        document.getElementById('message').textContent = 'Invalid username or password';
     }
-}
+});
