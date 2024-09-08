@@ -1,13 +1,12 @@
-document.getElementById('log').addEventListener('click', function() {
-    // Get user input values
+function handleLogin() {
     var username = document.getElementById('name').value;
     var password = document.getElementById('pass').value;
     
-    // Validate the credentials
     if (username === 'admin' && password === '12345') {
-        // Redirect to another page (e.g., dashboard.html)
-        window.location.href = 'todo.html'; // Change 'dashboard.html' to the desired URL
+        window.location.href = 'todo.html'; 
     } else {
-        document.getElementById('message').textContent = 'Invalid username or password';
+        document.getElementById('message').innerText = 'Invalid username or password';
     }
-});
+}
+
+document.getElementById('log').addEventListener('click', handleLogin);
